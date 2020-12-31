@@ -1,0 +1,14 @@
+{
+    "0": {
+        "name": "Health",
+        "image_path": "image_url.jpg"
+    },
+    "1": {
+        "name": "Activity",
+        "image_path": "image_url.jpg"
+    },
+    "2": {
+        "name": "Chore",
+        "image_path": "image_url.jpg"
+    }
+}
