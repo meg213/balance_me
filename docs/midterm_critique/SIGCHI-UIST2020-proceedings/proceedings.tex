@@ -1,0 +1,373 @@
+\documentclass{sigchi}
+
+% Copyright
+\CopyrightYear{2020}
+\setcopyright{acmlicensed}
+
+% Use this command to override the default ACM copyright statement
+% (e.g. for preprints).  Consult the conference website for the
+% camera-ready copyright statement.
+
+\toappear{
+Permission to make digital or hard copies of all or part of this work
+for personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial advantage
+and that copies bear this notice and the full citation on the first
+page. Copyrights for components of this work owned by others
+must be honored. Abstracting with credit is permitted.
+
+\medskip
+CS 4605, Summer 2020
+
+Georgia Institute of Technology
+
+Atlanta, GA 30332
+}
+
+% Load basic packages
+\usepackage{balance}       % to better equalize the last page
+\usepackage{graphics}      % for EPS, load graphicx instead 
+\usepackage[T1]{fontenc}   % for umlauts and other diaeresis
+\usepackage{txfonts}
+\usepackage{mathptmx}
+\usepackage[pdflang={en-US},pdftex]{hyperref}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{textcomp}
+
+% Some optional stuff you might like/need.
+\usepackage{microtype}        % Improved Tracking and Kerning
+% \usepackage[all]{hypcap}    % Fixes bug in hyperref caption linking
+\usepackage{ccicons}          % Cite your images correctly!
+% \usepackage[utf8]{inputenc} % for a UTF8 editor only
+
+% If you want to use todo notes, marginpars etc. during creation of
+% your draft document, you have to enable the "chi_draft" option for
+% the document class. To do this, change the very first line to:
+% "\documentclass[chi_draft]{sigchi}". You can then place todo notes
+% by using the "\todo{...}"  command. Make sure to disable the draft
+% option again before submitting your final document.
+\usepackage{todonotes}
+
+% Paper metadata (use plain text, for PDF inclusion and later
+% re-using, if desired).  Use \emtpyauthor when submitting for review
+% so you remain anonymous.
+\def\plaintitle{Balance Me: Midterm Critique}
+\def\plainauthor{Kory Brantley, Dylan Cripe, Morgan Gomez, Rahul Patel,
+and Alex Schwartz}
+\def\emptyauthor{}
+\def\plainkeywords{Authors' choice; of terms; separated; by
+  semicolons; include commas, within terms only; this section is required.}
+\def\plaingeneralterms{Documentation, Standardization}
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{
+    \def\UrlFont{\sf}
+  }{
+    \def\UrlFont{\small\bf\ttfamily}
+  }}
+\makeatother
+\urlstyle{leo}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+  pdftitle={\plaintitle},
+% Use \plainauthor for final version.
+%  pdfauthor={\plainauthor},
+  pdfauthor={\emptyauthor},
+  pdfkeywords={\plainkeywords},
+  pdfdisplaydoctitle=true, % For Accessibility
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=linkColor,
+  breaklinks=true,
+  hypertexnames=false
+}
+
+% create a shortcut to typeset table headings
+% \newcommand\tabhead[1]{\small\textbf{#1}}
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{\plaintitle}
+
+\numberofauthors{5}
+\author{
+\plainauthor
+%  \alignauthor{Kory Brantley\\
+%    \affaddr{CS (HCI/UI)}\\
+%    \email{kbrantley@gatech.edu}}\\
+%  \alignauthor{Dylan Cripe\\
+%    \affaddr{CS (Intelligence/HCI)}\\
+%    \email{dcripe@gatech.edu}}\\
+%  \alignauthor{Morgan Gomez\\
+%    \affaddr{CM}\\
+%    \email{mgomez46@gatech.edu}}\\
+%  \alignauthor{Rahul Patel\\
+%    \affaddr{CS (Info Internetworks/Devices)}\\
+%    \email{rahul199722@gmail.com}}\\
+%  \alignauthor{Alex Schwartz\\
+%    \affaddr{CompE}\\
+%    \email{aschwartz@gatech.edu}}\\
+}
+
+\maketitle
+
+\section{Introduction}
+
+The digital world in which we now live has given us access to an exceedingly
+large amount of information at our fingertips. While beneficial, this vast
+amount of information and the constant connection to it may be distracting to
+teenagers, especially those with intellectual or developmental disabilities
+(IDD). There are approximately 6.5 million people with an intellectual or
+developmental disability in the United States [1], and they may have difficulty
+balancing their time between required tasks and recreational ones. While there
+are multiple solutions currently on the market for keeping on task, most of
+them are either too simple (i.e., countdown clocks) or too complex. The goal of
+this project is to develop an interactive and minimalist smartphone application
+and companion smartwatch application to help teenagers with and without IDD
+manage their required work while still making time to do things they want to do.
+
+\section{Related Work}
+
+Currently, there are many different types of time management and task tracking
+applications on the market; some specialize in scheduling, habits, and routines
+while others emphasize focus and what the user is spending their time on.
+\textit{Focus Keeper} is a mobile app that utilizes an onscreen timer to keep
+users focused and allows users to schedule breaks and set session lengths [2].
+\textit{Toggl} is another mobile application that allows users to track and
+monitor the time they spend on activities, while also setting goals and plans
+for completion [3]. Applications like \textit{Stepping Stones} and
+\textit{CanPlan} are geared towards users with disabilities, both creating
+routines for users to modify and stick to [4, 5]. Additionally,
+\textit{Stepping Stones} consists of very detailed steps in which a user should
+complete each day [4].
+
+What separates \textit{Balance Me} from other existing technologies is the
+combination of individual and team task management, along with a wearable
+application to ensure that time management tasks are completed. Those using our
+application are able to view all tasks in one place in a format that is easy to
+use. Existing applications geared towards time management are often either too
+complicated for adolescents with intellectual disabilities, or too simple to be
+stimulating and useful long term. For instance, the application
+\textit{Focus Keeper} [2] encourages users to focus via starting and stopping a
+timer, but fails to incorporate scheduling of future tasks or the creation of
+different types of tasks. Time management technologies geared towards those with
+developmental disabilities, such as \textit{Task Timer} [6], are too simple to
+be used by those with and without intellectual disabilities. In comparison,
+\textit{Monday.com} [7] provides a solution to group task management and allows
+for the managing, creation, and scheduling of tasks, but is too complicated for
+individuals looking for a simplified time management tool. \textit{Balance Me}
+aims to provide a middle ground in the form of an easily navigable application
+that incorporates existing wearable technology to reinforce time management
+goals.
+
+\section{Current Work}
+
+Our team has divided the work on the mobile application into front-end
+development and back-end development. This section talks about the work that
+has been done thus far on both fronts.
+
+\subsection{Front-End Development}
+
+With target users in mind, the focus of \textit{Balance Me} is to deliver a
+user interface that is easy to use and motivating. The user should feel
+accomplished when they finish a task, but also, should not feel unmotivated
+when they fail to finish a task on time. The purpose of this application is to
+help the user enhance their time and task management skills. If a task is not
+completed on time, the user should learn from the failure rather than feel
+defeated.
+
+Currently, the \textit{Balance Me} team has established the groundwork to
+develop these functions. Our focus for the first half of the semester was to
+understand and develop the flow of the application, which supports the user’s
+schedule rather than dictate it. For example, the user has an option to create a
+task, but not schedule it. This provides the user with certain flexibility
+while using the application. The current UI is designed to be minimal yet
+impactful. We do not want to overwhelm users with information.
+
+
+\subsection{Back-End Development}
+
+Our goal for the backend design was to create a RESTful API that had direct
+communication with our database. To do this, we used Express, Node.js, and
+Mongoose for our server communication. For our database, we are using MongoDB
+Atlas, as it provides us a database with lenient reading/writing and plenty of
+space to hold our data. Furthermore, we are using Heroku to host our backend
+repository, which lets us make calls to our API from any device.
+
+The reason we chose to use Mongoose is its models. Mongoose models utilize
+schemas to let us easily layout what data we want each object type to
+encapsulate. For the \textit{Balance Me} app, this is the creation of two main
+object types: User and Task. The user model holds information about each
+individual user’s data, such as their first name and their email.
+
+In contrast to the simple user model, we created a task model that would be
+capable of dynamic updates and easy repetition. Each task is referring to the
+user who created it and the user it is assigned to. This allows for the
+possibility of another ``parent'' account to create a task and assign it to a
+``child'' account. In the case of a caregiver and a child who has a mental
+disability, this would allow for the caregiver to easily create and assign a
+task to the child from anywhere.
+
+\section{Discussion}
+
+At the midway point in the semester, perhaps the most important thing we have
+learned so  far is the ability to find the middle ground between our ideal goals
+and reality. As a group, none of us had much experience with React Native, the
+framework we are using to build our application. Therefore, it took about a
+week for everyone to get comfortable programming and creating components,
+screens, and other react native pieces required for this project. When writing
+our proposal, our timeline seemed easy enough to stick to, but with the learning
+curve required to do most of the work, we found ourselves about a week behind
+because we did not factor in the time it takes to get used to the framework.
+This meant that we had to revise our timeline and as a group decide which
+aspects of our application are most important, and focus on those first before
+getting into other additional features. 
+
+Despite seeming like a negative, this actually allowed for our team to have
+in-depth discussions about what elements of the application are most important
+to the user and do more research on our user’s needs that we would not have done
+otherwise. This also caused us to investigate what components we can outsource
+to existing available components that we can then customize to fit our needs,
+instead of building everything ourselves. Through these discussions, we have
+also learned that our initial implementation of the project needed tweaking as
+our core user group has different needs than the everyday individual, so despite
+our initial excitement to add in a new feature or cool design to our
+application, our focus needs to stay on our user and their experience. This
+means that our  design needs to stay simple and focused on the application goals
+instead of fun elements that, while we would enjoy creating, do not adhere to the
+project’s core goals. These elements are still included in our timeline, but are
+now placed towards the end of the semester so that we can create them if we have
+extra time towards the end of the course.
+
+
+\section{Future Work}
+
+Work on this project will continue to progress according to the following
+updated timeline:
+
+\newenvironment{myitemize}
+{ \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{itemize}                  } 
+
+\begin{myitemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+	\item \textbf{Week 4 (June 28--July 4): Mobile Improvements}
+	\begin{myitemize}
+		\item Continued development of backend/data storage
+		\item Finalize flow of screens in mobile app
+		\item As a user, I want to see graphs/charts to be able to monitor my progress
+		\begin{myitemize}
+			\item \textit{Feature:} Page to see statistics of previous tasks
+		\end{myitemize}
+		\item As a user, I want tips and how-to tutorials on how to do tasks
+		\begin{myitemize}
+			\item \textit{Feature:} Tips and how-to’s added to active task screen
+		\end{myitemize}
+	\end{myitemize}
+  
+	\item \textbf{Week 5 (July 5--11): Wearable Application Development and Gamification}
+	\begin{myitemize}
+		\item Adapt backend to wearable application
+		\item As a user, I want to start a task from a wearable
+		\begin{myitemize}
+			\item \textit{Feature:} Wearable app creation of a task
+		\end{myitemize}
+		\item As a user, I want to have default tasks available to choose from a quick start option on a wearable device
+		\begin{myitemize}
+			\item \textit{Feature:} Predefined quick start list
+		\end{myitemize}
+		\item As a user, I want a visual game component to motivate me to complete tasks on time
+		\begin{myitemize}
+			\item \textit{Feature:} Creation of game component to be integrated into the application
+			\item \textit{Feature:} Page dedicated to see the game component and total points/level
+		\end{myitemize}
+	\end{myitemize}
+	
+	\item \textbf{Week 6 (July 12--18): Mobile and Wearable Improvements}
+	\begin{myitemize}
+		\item Continue implementation of visual game component
+		\item As a user, I want to be notified for upcoming tasks from my wearable and phone
+		\begin{myitemize}
+			\item \textit{Feature:} Vibrations on wearable and notification on phone to tell the user when a task needs to be completed soon or if timer is almost done
+		\end{myitemize}
+		\item As a user, I want to share my progress with others in the form of game statistics
+		\begin{myitemize}
+			\item \textit{Feature:} Sharing stats via social media
+			\item \textit{Feature:} Seeing other user’s progress as well as your own in the settings page
+		\end{myitemize}
+	\end{myitemize}
+	
+	\item \textbf{Week 7 (July 19--24): Extra Features \& Bug Fixes \textit{(Project due July 24)}}
+	\begin{myitemize}
+		\item Fix existing bugs in the applications
+		\item As a user, I want to customize my game character
+		\begin{myitemize}
+			\item \textit{Feature:} Customization page
+		\end{myitemize}
+		\item As a user, I want to monitor my time spent on other applications
+		\begin{myitemize}
+			\item \textit{Feature:} Add setting button to monitor and notify user of excessive app usage
+		\end{myitemize}
+		\item As a user, I want the application to be visually appealing
+		\begin{myitemize}
+			\item \textit{Improvement:} UI Improvements (if needed)
+		\end{myitemize}
+		\item Project Deliverable
+	\end{myitemize}
+
+\end{myitemize}
+
+\section{Conclusion}
+
+With the development of \textit{Balance Me} we hope to create a product that
+can help teenagers with and without IDD balance their time between required
+tasks and leisure activities. We believe that the work that has been
+accomplished so far is promising and will lead to an innovative solution for
+this problem space. We believe that, by the end of the semester, we will have a
+functioning product that enables users to improve their lives by successfully
+managing their time.
+
+\section{References}
+[1] ``What is Intellectual Disability?'', \textit{SpecialOlympics.org}, 2020. [Online]. Available: https://www.specialolympics.org/about/intellectual-disabilities/what-is-intellectual-disability. [Accessed: 08- Jun- 2020].
+
+[2] ``Focus Keeper - Time Management'', \textit{App Store}, 2020. [Online]. Available: https://apps.apple.com/us/app/focus-keeper-time-management/id867374917. [Accessed: 08- Jun- 2020].
+
+[3] ``Toggl - Features'', \textit{Toggl.com}, 2020. [Online]. Available: https://www.toggl.com/
+features/. [Accessed: 08- Jun- 2020].
+
+[4] ``Stepping Stones - Daily Routines | Social App Hub'', \textit{Socialapphub.com}, 2020. [Online]. Available: https://www.socialapphub.com/app/stepping-stones-daily-routines. [Accessed: 08- Jun- 2020].
+
+[5] ``CanPlan - a task manager app'', \textit{https://www.canassist.ca}, 2020. [Online]. Available: https://www.canassist.ca/EN/main/programs/technologies-and-devices/at-home/canplan.html. [Accessed: 08- Jun- 2020].
+
+[6] ``A Task Timer for Special Education'', \textit{Resna.org}, 2020. [Online]. Available: https://www.resna.org/sites/default/files/legacy/conference/
+proceedings/2003/Papers/TSP/Oleson\_TSP.htm. [Accessed: 08- Jun- 2020].
+
+[7] ``Time Management | monday.com'', \textit{monday.com}, 2020. [Online]. Available: https://monday.com/lp/aw/timemgmt/remote. [Accessed: 08- Jun- 2020].
+
+\end{document}

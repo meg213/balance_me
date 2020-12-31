@@ -1,0 +1,83 @@
+Health
+======
+-Take medication
+	Take your daily medication. Write the names of your medications here.
+	Steps:
+		1. Pour a glass of water
+		2. Take out the correct number of pills for your dosage
+		3. Follow the instructions on the bottle to take the pills
+-Go on a run
+	Get your body moving! Do some exercise by going on a run.
+	Steps:
+		1. Put on appropriate running clothes
+		2. Lace up your sneakers
+		3. Don't forget a house key
+		4. Bring a bottle of water if you're going on a long run
+-Drink 8 glasses of water
+	Stay hydrated during the day by drinking water.
+	Steps:
+		1. Drink water with every meal
+		2. Drink a glass of water whenever you're thirsty
+		3. Make sure to drink more water if you've been sweating
+-Check blood pressure
+	Check your blood pressure periodically to stay on top of your health.
+	Steps:
+		1. Put the cuff on your arm, not over clothes
+		2. Press the button on the machine to inflate the cuff
+		3. Make a note of the blood pressure reading
+
+
+Home
+====
+-Make the bed
+	Start each day by making your bed!
+	Steps:
+		1. Straighten out the covers
+		2. Tuck bottom of covers into the mattress
+		3. Arrange the pillows
+-Take out the trash
+	Take out the trash if it is full.
+	Steps:
+		1. Check trash bin to see if it is full
+		2. Tie the garbage bag closed
+		3. Bring the garbage bag outside
+		4. Put a new garbage bag in the bin
+-Wash the dishes
+	Wash the dishes after every meal so that they don't pile up.
+	Steps:
+		1. Put dirty dishes on one side of the sink
+		2. Rinse a dirty plate with water
+		3. Put some dish soap on a sponge and scrub the plate until it is clean
+		4. Dry the plate with a towel and put it on the other side of the sink
+		5. Repeat until all dishes are clean
+-Walk the dog
+	Take care of your dog by taking it on a walk.
+	Steps:
+		1. Get dressed to go on a walk
+		2. Grab a leash for your dog and some plastic bags
+		3. Use the plastic bags to clean up after the dog
+		4. Make sure the dog has water if it is hot outside
+
+
+School
+======
+-Pack notebooks
+	Make sure you have everything you need for the school day.
+	Steps:
+		1. Pack any textbooks you will need
+		2. Pack your notebooks so you can write down notes in class
+		3. Make sure to pack any homework that is due and needs to be handed in
+-Prepare lunch
+	Pack a lunch for today.
+	Steps:
+		1. Get your lunchbox or a paper bag
+		2. Pack a balanced meal (a sandwich is a great choice, but you can be creative)
+		3. Pack a drink (water is a healthy option)
+		4. Make sure to add an icepack if the food needs to be kept cool
+-Choose outfit
+	Pick out something to wear today!
+	Steps:
+		1. Check the weather forecast
+		2. If it will be cold, wear heavier clothes (sweater, long pants, underwear, socks, shoes)
+		3. If it will be warm, wear lighter clothes (T-shirt, shorts, underwear, maybe sandals?)
+		4. Get dressed!

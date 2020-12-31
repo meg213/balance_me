@@ -1,0 +1,416 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{array}
+
+
+\title{Balance Me: Project Proposal}
+\author{Kory Brantley, Dylan Cripe, Morgan Gomez, Rahul Patel, Alex Schwartz}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\vspace*{\stretch{1}}
+\begin{center}
+{\huge \textit{Balance Me}: Project Proposal}
+
+\bigskip
+
+\bigskip
+
+by
+
+{\large Kory Brantley, Dylan Cripe, Morgan Gomez, Rahul Patel, 
+
+and Alex Schwartz}
+\end{center}
+\vspace{\stretch{3}}
+\begin{center}
+June 9, 2020
+\end{center}
+
+\newpage
+\pagenumbering{arabic}
+
+\section*{Group Members and Roles}
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Name}  & \textbf{Major}                   & \textbf{Role}                        \\ \hline
+Kory Brantley  & CS (HCI/UI)                      & Back-end development, Data storage   \\ \hline
+Dylan Cripe    & CS (Intelligence/HCI)            & Front-end development                \\ \hline
+Morgan Gomez   & CM                               & Front-end development, UI design     \\ \hline
+Rahul Patel    & CS (Info Internetworks/Devices)  & Software development                 \\ \hline
+Alex Schwartz  & CompE                            & Software development                 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\newpage
+\section{Project Description}
+
+The digital world in which we now live has given us access to an exceedingly large amount of information at our fingertips. While beneficial, this vast amount of information and the constant connection to it may be distracting to teenagers, especially those with intellectual or developmental disabilities (IDD). These individuals might have difficulty balancing their time between required tasks and recreational ones. While there are multiple solutions currently on the market for keeping on task, most of them are either too simple (i.e., countdown clocks) or too complex. The goal of this project is to develop an interactive and minimalist smartphone application and companion smartwatch application to help teenagers with and without IDD manage their required work while still making time to do things they want to do.
+
+
+\subsection{Motivation}
+
+There are approximately 6.5 million people with an intellectual or developmental disability in the United States [1]. People with IDD are capable of many great things, but they tend to have trouble focusing on a single task. It is just not people with IDD that suffer from lack of time management; on a regular day, all kinds of people can be distracted by a multitude of virtual activities like social media and streaming media. With the number of distractions around us, it is no wonder we find it difficult to remain focused on one task. With a fixed amount of time, people feel stressed when faced with multiple pending tasks. In reality, people usually have more time than enough time to accomplish everything they need to; the only thing standing in the way of this are poor time management skills. It is important to focus on one task at a time. On the other hand of the spectrum, some people do not have trouble focusing on a task, and yet they still face physical and mental distress due to overworking. People that overwork focus on their work disproportionately, leading to negative effects for their mental and physical health such as fatigue, depression and apathy. In a study by UCL, it was found that people who worked three or more hours longer had a 60\% higher risk of heart-related problems [2].
+
+To help sustain focus for users with and without IDD, \textit{Balance Me} will assist users with their everyday tasks via time management utilities. Time management can help a person drastically improve the amount of work they can accomplish in a short period of time. By improving the user’s time management skills, the user will have more time for self-improvement or leisure activities. Also, by balancing the amount of time spent on work versus self-improvement or leisure activities, the user may see a large reduction in stress and anxiety.
+
+
+
+\subsection{Approach}
+
+The approach this project will take will consist of two parts---a mobile phone application and a smartwatch application. Both applications will be used in conjunction with each other to more efficiently manage task progress.
+
+\subsubsection*{Mobile Application}
+
+The mobile phone application will be the main area for users to view tasks that they need to accomplish. When the user wants to add a new task to their agenda, they will be able to select from a predefined list of example tasks, or they can create a custom task. Task parameters will include task name and description, duration to complete, time the task is “due”, and desired notification time(s). The user can select whether the notification is displayed on the mobile device, the smartwatch, or both. Additionally, the app will include an “assisted mode” option to help guide individuals with IDD. When selected, “assisted mode” will add the ability to create a list of steps to be completed for each task. These steps can be sequential steps that the user must take to complete the task, or they can be a list of tips that the user should keep in mind while completing the task. In addition to the creation of tasks, the mobile app will be used to view graphical representations of the user’s task progress over time; this will include a calendar with days color-coded by task successes and failures in order to allow the user to track their completion habits.
+
+The mobile app’s biggest feature involves the gamification of completing tasks. To give the user an entertaining incentive to complete their tasks in a timely manner, each task will have an associated point value. Points will be awarded to the user upon successful task completion, and the user’s accumulated points will be displayed in a fun, non-numeric graphic on the mobile app’s home page. In an effort to stop the user from being distracted by the app itself, we will develop the UI to be clean and minimalist with only as many buttons as absolutely necessary. We will be utilizing React to develop the mobile app so that it can target both iOS and Android devices.
+
+\subsubsection*{Smartwatch Application}
+
+The smartwatch application will be a companion to the main mobile application; it will enable the user to view information about upcoming or current tasks at a glance. The app will emphasize displaying information qualitatively by using words or the graphic from the mobile app home page to relay information about tasks. A lack of numbers on the smartwatch screen may help some individuals with IDD to better understand their task progress. Additionally, the app will make use of the smartwatch’s onboard sensors to better understand the context of the user’s actions. For example, the app might detect that the user has been physically still during a time in which they should be completing a task that requires motion. In that scenario, the application could send a notification to the user to remind them of the task that they need to accomplish. Other sensor input that might be used to establish context may include the user’s GPS location and the user’s heart rate. We will be targeting Fitbit smartwatches for this iteration of the project.
+
+
+\newpage
+\section{Existing Research}
+
+Currently, there are many different types of time management and task tracking applications on the market; some specialize in scheduling, habits, and routines while others emphasize focus and what the user is spending their time on. The top applications on the Apple Store for time management are \textit{Focus Keeper}, \textit{Productivity}, and \textit{Toggl}. \textit{Focus Keeper} utilizes an onscreen timer to keep you on track and focused. Additionally, users can set schedule breaks and session lengths [3]. \textit{Productivity} is more of a planner and goal tracker [4]. \textit{Toggl} is the most comprehensive application out of the three as it combines both feature sets; you are able to track and monitor the time you spend on activities, while also setting goals and plans [5]. Applications like \textit{Stepping Stones} and \textit{CanPlan} are geared towards users with disabilities, both creating routines for users to modify and stick to [6, 7]. \textit{Stepping Stones} consists of very detailed steps in which a user should complete each day [6].
+
+In terms of wearable technology, there are not as many time-management products on the market, making this a niche field. Existing products here include \textit{TimeFlip} and \textit{Timeular}, the latter of which combines a smart gadget and a mobile application to manage your time. Both of these products are used by taking a multi-faced object with different symbols on each side representing different activities one could engage in, and flipping it to the corresponding side that will be tracked by the mobile application [8, 9]. One other interesting piece of technology is a stress tracking wristband, which might be useful to helping those looking for a balance between work and play.
+
+What separates \textit{Balance Me} from other existing technologies is the combination of individual and team task management, along with a wearable child application to ensure that time management tasks are completed. With most existing time management technologies, the focus tends to be on either managing an individual’s work-life balance, or group related task management activities. By combining both sides of task management, those using our application are able to view all tasks in one place in a format that is easy to use. Our goal is to make tasks easy to create, view, and log for those who might have IDD, while also keeping the individual aware of time constraints and upcoming tasks that need to be completed.
+
+Existing applications geared towards time management are often either too complicated for adolescents with intellectual disabilities, or too simple to be stimulating and useful long term. For instance, the application \textit{Focus Keeper} [3] encourages users to focus via starting and stopping a timer, but fails to incorporate scheduling of future tasks or the creation of different types of tasks. Time management technologies geared towards those with developmental disabilities, such as \textit{Task Timer} [10], are too simple to be used by those with and without intellectual disabilities. In comparison, \textit{Monday.com} [11] provides a solution to group task management and allows for the managing, creation, and scheduling of tasks, but is too complicated for individuals looking for a simplified time management tool. \textit{Balance Me} aims to provide a middle ground in the form of an easily navigable application that incorporates existing wearable technology to reinforce time management goals.
+
+
+
+\newpage
+\section{Required Resources} 
+
+\subsubsection*{Hardware}
+
+\noindent
+The hardware required for this project includes:
+
+\begin{itemize}
+  \item Fitbit smartwatch
+  \begin{itemize}
+    \item Needed for integration and testing
+    \item Group member Morgan Gomez has a Fitbit smartwatch available for testing
+    \item Fitbit OS Simulator doubles as a working Fitbit for testing purposes
+  \end{itemize}
+  
+  \item iPhone (running iOS 10.0 or newer)
+  \begin{itemize}
+    \item Needed for app integration and testing
+    \item Multiple group members have iPhones available for testing
+  \end{itemize}
+  
+  \item Android phone (running Android 4.1 or newer)
+  \begin{itemize}
+    \item Needed for app integration and testing
+    \item Multiple group members have Android devices available for testing
+  \end{itemize}
+  
+  \item MacBook (running Mac OS 10.7 or newer)
+  \begin{itemize}
+    \item Needed to access Xcode
+    \item Multiple group members have MacBooks available for use
+  \end{itemize}
+\end{itemize}
+
+\subsubsection*{Software}
+
+\noindent
+The software required for this project includes:
+
+\begin{itemize}
+  \item Android Studio Code
+  \begin{itemize}
+    \item IDE used for Android app creation
+    \item Equipped with a simulator for Android devices
+    \item Free downloadable IDE that works for Windows/Mac/Linux
+  \end{itemize}
+  
+  \item Xcode
+  \begin{itemize}
+    \item IDE used for iOS app creation
+    \item Equipped with a simulator for different iOS devices
+    \item Free downloadable IDE exclusively available on Mac
+  \end{itemize}
+  
+  \item Fitbit OS Simulator
+  \begin{itemize}
+    \item Simulator used to test Fitbit development without needing a Fitbit
+    \item Free downloadable simulator usable on Windows/Mac
+  \end{itemize}
+\end{itemize}
+
+
+\newpage
+\section{Timeline}
+
+We have created the following timeline of how work will progress over the course of the project. This timeline is an approximation and will be re-evaluated in the Midterm Critique.
+
+\subsection{Abridged Timeline}
+
+\begin{itemize}
+  \item Weeks 1--3: Creation of Application \& Integration with Wearable
+  \item Weeks 4--5: Gamification \& Additional Features
+  \item Weeks 6--7: Bonus Features \& Bug Fixes
+\end{itemize}
+
+\subsection{Detailed Timeline}
+
+\begin{itemize}
+  \item \textbf{Week 1 (June 7--13): Creating an Individual Task \& User Profile}
+  \begin{itemize}
+    \item Create UML Diagram for visualization of app structure
+    \item As a user, I want to create an individual time management task
+    \begin{itemize}
+      \item \textit{Feature:} Creation of home screen on phone
+      \item \textit{Feature:} Creating an individual task to take place right now
+    \end{itemize}
+    \item As a user, I want to create a profile for myself
+    \begin{itemize}
+      \item \textit{Feature:} Page to store profile information (just user’s name for now)
+    \end{itemize}
+  \end{itemize}
+  
+  \item \textbf{Week 2 (June 14--20): Future Tasks \& Wearable Tech Integration}
+  \begin{itemize}
+    \item As a user, I want to be able to schedule tasks for later
+    \begin{itemize}
+      \item \textit{Feature:} Ability to start a task at a future time
+    \end{itemize}
+    \item As a user, I want to see upcoming, completed, and overdue tasks
+    \begin{itemize}
+      \item \textit{Feature:} Page to view current tasks
+    \end{itemize}
+    \item As a user, I want to start a task from a wearable
+    \begin{itemize}
+      \item \textit{Feature:} Wearable app creation of a task
+    \end{itemize}
+    \item As a user, I want to have a predefined list of tasks to choose from
+    \begin{itemize}
+      \item \textit{Feature:} Add default individual tasks
+    \end{itemize}
+  \end{itemize}
+  
+  \item \textbf{Week 3 (June 21--27): Data Management \& Repeated Tasks}
+  \begin{itemize}
+    \item As a user, I want to have certain tasks repeat daily/weekly
+    \begin{itemize}
+      \item \textit{Feature:} Ability to save tasks to be repeated
+    \end{itemize}
+    \item As a user, I want to see graphs/charts to be able to monitor my progress
+    \begin{itemize}
+      \item \textit{Feature:} Page to see statistics of previous tasks
+    \end{itemize}
+    \item As a user, I want to have default tasks available to choose from a quick start option on a wearable device
+    \begin{itemize}
+      \item \textit{Feature:} Predefined quick start list
+    \end{itemize}
+    \item Midterm Critique
+  \end{itemize}
+  
+  \item \textbf{Week 4 (June 28--July 4): Gamification} \textit {(Midterm Critique due June 30)}
+  \begin{itemize}
+    \item As a user, I want to provide a reward system for user
+    \begin{itemize}
+      \item \textit{Feature:} Assign point value to tasks
+    \end{itemize}
+    \item As a user, I want a visual game component to motivate me to complete tasks on time
+    \begin{itemize}
+      \item \textit{Feature:} Creation of game component to be integrated into the application
+      \item \textit{Feature:} Page dedicated to see the game component and total points/level
+    \end{itemize}
+    \item Re-evaluation of timeline
+  \end{itemize}
+  
+  \item \textbf{Week 5 (July 5--11): Gamification Part 2 \& Notifications}
+  \begin{itemize}
+    \item Continue implementation of visual game component
+    \item As a user, I want to be notified for upcoming tasks from my wearable and phone
+    \begin{itemize}
+      \item \textit{Feature:} Vibrations on wearable and notification on phone to tell the user when a task needs to be completed soon or if timer is almost done
+    \end{itemize}
+  \end{itemize}
+  
+  \item \textbf{Week 6 (July 12--18): Improvements}
+  \begin{itemize}
+    \item As a user, I want the application to be visually appealing
+    \begin{itemize}
+      \item \textit{Improvement:} UI Improvements (if needed)
+    \end{itemize}
+    \item As a user, I want tips and how-to tutorials on how to do tasks
+    \begin{itemize}
+      \item \textit{Improvement:} Tips and how-to’s added to active task screen
+    \end{itemize}
+    \item As a user, I want to share my progress with others in the form of game statistics
+    \begin{itemize}
+      \item \textit{Feature:} Sharing stats via social media
+      \item \textit{Feature:} Seeing other user’s progress as well as your own in the settings page
+    \end{itemize}
+  \end{itemize}
+  
+  \item \textbf{Week 7 (July 19--24): Extra Features \& Bug Fixes} \textit{(Project due July 24)}
+  \begin{itemize}
+    \item As a user, I want to customize my game character
+    \begin{itemize}
+      \item \textit{Feature:} Customization page
+    \end{itemize}
+    \item As a user, I want to monitor my time spent on other applications
+    \begin{itemize}
+      \item \textit{Feature:} Add setting button to monitor and notify user of excessive app usage
+    \end{itemize}
+    \item Fix existing bugs in application
+    \item Project Deliverable
+  \end{itemize}
+
+\end{itemize}
+
+
+\subsection{Final Deliverables}
+
+Our final product will be an application compatible with existing wearables (Fitbit, Apple Watch) that helps a user with time management. This includes:
+
+\begin{itemize}
+  \item An application compatible with Android and/or Apple products where users can create, start, and log tasks
+  \item A wearable application compatible with existing wearables, specifically Fitbit, to quickly start tasks via the wearable interface
+  \item The ability to transmit data between the two devices and show user statistics with the given data
+  \item A gamified user experience to promote usability and time management, time permitting
+\end{itemize}
+
+
+
+\newpage
+\section{Grading Criteria}
+
+\noindent
+Each team member will be graded according to the following table:
+
+\begin{table}[h]
+    \centering
+     \setlength{\leftmargini}{0.4cm}
+    \begin{tabular}{| m{4cm} | m{2.5cm} | m{8.5cm} |}
+        \hline
+        \textbf{Grading Criteria} & \textbf{\% of Grade} & \textbf{Details} \\
+        \hline
+        Communication & 
+        15\% & 
+        \textit{Were they an active team member?}
+        
+        \textbullet\ Coming to team meetings
+        
+        \textbullet\ Being an active member of the team via meetings/GroupMe
+        
+        \hspace{0.5cm} -- Letting team know if you’re going to be offline/can’t make a call
+        
+        \hspace{0.5cm} -- Providing ideas \& insight when applicable \\
+        \hline
+        Project Deliverables & 
+        15\% & 
+        \textit{Did they help with the assigned deliverables?}
+        
+        \textbullet\ Involved with creation of:
+        
+        \hspace{0.5cm} -- Proposal
+        
+        \hspace{0.5cm} -- Midterm critique
+        
+        \hspace{0.5cm} -- Final report \\
+        \hline
+        Individual Role & 
+        40\% & 
+        \textit{Did they help with the implementation of the project?}
+        
+        \textbullet\ Worked to complete the team goals
+        
+        \textbullet\ Assigned tasks were completed to the best of their ability
+        
+        \textbullet\ Offered help when applicable \\
+        \hline
+        Final Deliverable
+        
+        \textit{(All members receive the same grade)} & 
+        30\% & 
+        \textit{Was the project completed to the best of our ability?}
+        
+        \textbullet\ Given the allotted time and our skill set, how close did we get to achieving our final product?
+        
+        \textbullet\ Did we do the best we could? \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\section{References}
+\noindent
+[1] "What is Intellectual Disability?", \textit{SpecialOlympics.org}, 2020. [Online]. Available: https://www.specialolympics.org/about/intellectual-disabilities/what-is-intellectual-disability. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[2] M. Virtanen, J. Ferrie, A. Manoux, A. Shipley, J. Vahtera, M. Marmot and M. Kivimäki, "Overtime work and incident coronary heart disease: the Whitehall II prospective cohort study," \textit{European Heart Journal}, vol. 31, no. 14, p. 1737–1744, May 2010.
+
+\medskip
+
+\noindent
+[3] "Focus Keeper - Time Management", \textit{App Store}, 2020. [Online]. Available: https://apps.apple.com/us/app/focus-keeper-time-management/id867374917. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[4] "Productivity - Daily Tasks", \textit{App Store}, 2020. [Online]. Available: https://
+apps.apple.com/us/app/productivity-daily-tasks/id670870972. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[5] "Toggl - Features", \textit{Toggl.com}, 2020. [Online]. Available: https://www.toggl.com/
+features/. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[6] "Stepping Stones - Daily Routines | Social App Hub", \textit{Socialapphub.com}, 2020. [Online]. Available: https://www.socialapphub.com/app/stepping-stones-daily-routines. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[7] "CanPlan - a task manager app", \textit{https://www.canassist.ca}, 2020. [Online]. Available: https://www.canassist.ca/EN/main/programs/technologies-and-devices/at-
+
+\noindent
+home/canplan.html. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[8] "What is TimeFlip?", \textit{Timeflip.io}, 2020. [Online]. Available: https://timeflip.io/
+en/device. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[9] "Tracker - the most effortless and accurate way to track your time", \textit{Timeular}, 2020. [Online]. Available: https://timeular.com/product/tracker/. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[10] "A Task Timer for Special Education", \textit{Resna.org}, 2020. [Online]. Available: https://www.resna.org/sites/default/files/legacy/conference/proceedings/2003/
+Papers/TSP/Oleson\_TSP.htm. [Accessed: 08- Jun- 2020].
+
+\medskip
+
+\noindent
+[11] "Time Management | monday.com", \textit{monday.com}, 2020. [Online]. Available: https://monday.com/lp/aw/timemgmt/remote. [Accessed: 08- Jun- 2020].
+
+\end{document}
